@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <title>فرم تماس</title>
+</head>
+
+<body>
+    <form action="/submit" method="POST">
+        <label for="name">نام:</label><br>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="email">ایمیل:</label><br>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="password">رمز عبور:</label><br>
+        <input type="password" id="password" name="password" required><br>
+
+        <label for="message">پیام:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="ارسال">
+    </form>
+
+    <div>
+        <table>
+
+            <tbody>
+                <% contacts.forEach((contact)=>{ %>
+                    <tr>
+                        <td>
+                            NAME: <%= contact.name %> |
+                        </td>
+                        <td>
+                            EMAIL: <%= contact.email %> |
+                        </td>
+                        <td>
+                            PASSWORD: <%= contact.password %> |
+                        </td>
+                        <td>
+                            MESSAGE: <%= contact.message %> |
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
